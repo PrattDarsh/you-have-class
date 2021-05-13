@@ -223,7 +223,7 @@
 
       //////////////////////////////////extra class
       if (day == 4 & hrs >= 14 & hrs < 18) {
-        subject = "ooc";
+        subject = "extra";
       }
       /////////////////////////////////////////////
       //sunday
@@ -267,6 +267,10 @@
         case "lunch": document.getElementById('classButton').href = "";
           document.getElementById('statement').innerHTML = "It's grab something to eat time.";
           document.getElementById('image').src = "images/lunch.svg";
+          break;
+        case "extra": document.getElementById('classButton').href = "https://meet.google.com/ohq-znxx-ztw";
+          document.getElementById('statement').innerHTML = "You have an extra class.DAA lab";
+          document.getElementById('image').src = "images/labs.svg";
           break;
 
         default: document.getElementById('statement').innerHTML = "You don't have a class now.";
