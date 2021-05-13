@@ -16,12 +16,12 @@
   </style>
 </head>
 
-<body onload="getClass()" class="bg-gray-900 h-screen border-2 rounded">
-  <div class="max-w-6xl p-4 grid grid-cols-1 md:grid-cols-2 mx-auto items-center h-full ">
+<body onload="getClass()" class="h-screen bg-gray-900 border-2 rounded">
+  <div class="grid items-center h-full max-w-6xl grid-cols-1 p-4 mx-auto md:grid-cols-2 ">
     <div class="space-y-8">
-      <p id="statement" class="text-white text-center text-4xl font-bold"></p>
-      <a id="classButton" href=""
-        class="text-white flex items-center justify-center px-6 py-4 border-2 border-indigo-600 hover:bg-indigo-600 w-56 mx-auto shadow-lg transition duration-100 ease-in-out transform hover:-translate-y-1 hover:scale-110">Join
+      <p id="statement" class="text-4xl font-bold text-center text-white"></p>
+      <a id="classButton" href="" target="_blank"
+        class="flex items-center justify-center w-56 px-6 py-4 mx-auto text-white transition duration-100 ease-in-out transform border-2 border-indigo-600 rounded-lg shadow-lg hover:bg-indigo-600 hover:-translate-y-1 hover:scale-110">Join
         Class</a>
     </div>
     <div class="">
@@ -35,235 +35,242 @@
 
 </body>
 <script>
-
   function getClass() {
-    var d = new Date();
-    var day = d.getDay()
-    var hrs = d.getHours();
-    var mins = d.getMinutes();
-    var subject;
-    //monday
-    if (day == 1 & hrs >= 9 & hrs <= 10) {
-      subject = "daa";
-    }
-    else if (day == 1 & hrs >= 10 & hrs < 11) {
-      subject = "mes";
-    }
-    else if (day == 1 & hrs >= 11 & hrs < 12) {
-      subject = "dc";
-    }
-    else if (day == 1 & hrs >= 12 & hrs < 13) {
-      subject = "os";
-    }
-    else if (day == 1 & hrs >= 13 & hrs < 14 & mins <= 45) {
-      subject = "lunch";
-    }
-    else if (day == 1 & hrs >= 13 & hrs < 14 & mins >= 45) {
-      subject = "ooc";
-    }
-    else if (day == 1 & hrs >= 14 & hrs < 15 & mins <= 45) {
-      subject = "ooc";
-    }
-    else if (day == 1 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
-      subject = "dc";
-    }
-    else if (day == 1 & hrs >= 15 & hrs < 16 & mins <= 45) {   //3-3.45
-      subject = "dc";
-    }
-    else if (day == 1 & hrs >= 15 & hrs < 16 & mins >= 45) {    //3.45-4
-      subject = "daa";
-    }
-    else if (day == 1 & hrs >= 16 & hrs < 17 & mins <= 45) {    //4-4.45
-      subject = "daa";
-    }
-    //tuesday
-    if (day == 2 & hrs >= 9 & hrs < 10) {
-      subject = "mat";
-    }
-    else if (day == 2 & hrs >= 10 & hrs < 11) {
-      subject = "mes";
-    }
-    else if (day == 2 & hrs >= 11 & hrs < 12) {
-      subject = "lab";
-    }
-    else if (day == 2 & hrs >= 12 & hrs < 13) {
-      subject = "lab";
-    }
-    else if (day == 2 & hrs >= 13 & hrs < 14 & mins <= 45) {
-      subject = "lunch";
-    }
-    else if (day == 2 & hrs >= 13 & hrs < 14 & mins >= 45) {
-      subject = "kannada";
-    }
-    else if (day == 2 & hrs >= 14 & hrs < 15 & mins <= 45) {
-      subject = "kannada";
-    }
-    else if (day == 2 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
-      subject = "lab";
-    }
-    else if (day == 2 & hrs >= 15 & hrs < 16 & mins <= 45) {    //3-3.45
-      subject = "lab";
-    }
-    else if (day == 2 & hrs >= 15 & hrs < 16 & mins >= 45) {    //3.45-4
-      subject = "lab";
-    }
-    else if (day == 2 & hrs >= 16 & hrs < 17 & mins <= 45) {   //4-4.45
-      subject = "mes";
+    setInterval(function () {
+      var d = new Date();
+      var day = d.getDay()
+      var hrs = d.getHours();
+      var mins = d.getMinutes();
+      var subject;
+      //monday
+      if (day == 1 & hrs >= 8 & hrs <= 10) {
+        subject = "daa";
+      }
+      else if (day == 1 & hrs >= 10 & hrs < 11) {
+        subject = "mes";
+      }
+      else if (day == 1 & hrs >= 11 & hrs < 12) {
+        subject = "dc";
+      }
+      else if (day == 1 & hrs >= 12 & hrs < 13) {
+        subject = "os";
+      }
+      else if (day == 1 & hrs >= 13 & hrs < 14 & mins <= 45) {
+        subject = "lunch";
+      }
+      else if (day == 1 & hrs >= 13 & hrs < 14 & mins >= 45) {
+        subject = "ooc";
+      }
+      else if (day == 1 & hrs >= 14 & hrs < 15 & mins <= 45) {
+        subject = "ooc";
+      }
+      else if (day == 1 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
+        subject = "dc";
+      }
+      else if (day == 1 & hrs >= 15 & hrs < 16 & mins <= 45) {   //3-3.45
+        subject = "dc";
+      }
+      else if (day == 1 & hrs >= 15 & hrs < 16 & mins >= 45) {    //3.45-4
+        subject = "daa";
+      }
+      else if (day == 1 & hrs >= 16 & hrs < 17 & mins <= 45) {    //4-4.45
+        subject = "daa";
+      }
+      //tuesday
+      if (day == 2 & hrs >= 8 & hrs < 10) {
+        subject = "mat";
+      }
+      else if (day == 2 & hrs >= 10 & hrs < 11) {
+        subject = "mes";
+      }
+      else if (day == 2 & hrs >= 11 & hrs < 12) {
+        subject = "lab";
+      }
+      else if (day == 2 & hrs >= 12 & hrs < 13) {
+        subject = "lab";
+      }
+      else if (day == 2 & hrs >= 13 & hrs < 14 & mins <= 45) {
+        subject = "lunch";
+      }
+      else if (day == 2 & hrs >= 13 & hrs < 14 & mins >= 45) {
+        subject = "kannada";
+      }
+      else if (day == 2 & hrs >= 14 & hrs < 15 & mins <= 45) {
+        subject = "kannada";
+      }
+      else if (day == 2 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
+        subject = "lab";
+      }
+      else if (day == 2 & hrs >= 15 & hrs < 16 & mins <= 45) {    //3-3.45
+        subject = "lab";
+      }
+      else if (day == 2 & hrs >= 15 & hrs < 16 & mins >= 45) {    //3.45-4
+        subject = "lab";
+      }
+      else if (day == 2 & hrs >= 16 & hrs < 17 & mins <= 45) {   //4-4.45
+        subject = "mes";
 
-    }
-    //wednesday
-    if (day == 3 & hrs >= 9 & hrs < 10) {
-      subject = "dc";
-    }
-    else if (day == 3 & hrs >= 10 & hrs < 11) {
-      subject = "mes";
-    }
-    else if (day == 3 & hrs >= 11 & hrs < 12) {
-      subject = "daa";
-    }
-    else if (day == 3 & hrs >= 12 & hrs < 13) {
-      subject = "mat";
-    }
-    else if (day == 3 & hrs >= 13 & hrs < 14 & mins <= 45) {
-      subject = "lunch";
-    }
-    else if (day == 3 & hrs >= 13 & hrs < 14 & mins >= 45) {
-      subject = "mat";
-    }
-    else if (day == 3 & hrs >= 14 & hrs < 15 & mins <= 45) {
-      subject = "mat";
-    }
-    else if (day == 3 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
-      subject = "os";
-    }
-    else if (day == 3 & hrs >= 15 & hrs < 16 & mins <= 45) {    //3-3.45
-      subject = "os";
-    }
-    else if (day == 3 & hrs >= 15 & hrs < 16 & mins >= 45) {    //3.45-4
-      subject = "nope";
-    }
-    else if (day == 3 & hrs >= 16 & hrs < 17 & mins <= 45) {   //4-4.45
-      subject = "nope";
-    }
-    //thursday
-    if (day == 4 & hrs >= 9 & hrs < 10) {
-      subject = "ooc";
-    }
-    else if (day == 4 & hrs >= 10 & hrs < 11) {
-      subject = "daa";
-    }
-    else if (day == 4 & hrs >= 11 & hrs < 12) {
-      subject = "lab";
-    }
-    else if (day == 4 & hrs >= 12 & hrs < 13) {
-      subject = "lab";
-    }
-    else if (day == 4 & hrs >= 13 & hrs < 14 & mins <= 45) {
-      subject = "lunch";
-    }
-    else if (day == 4 & hrs >= 13 & hrs < 14 & mins >= 45) {
-      subject = "kan";
-    }
-    else if (day == 4 & hrs >= 14 & hrs < 15 & mins <= 45) {
-      subject = "kan";
-    }
-    else if (day == 4 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
-      subject = "nope";
-    }
-    else if (day == 4 & hrs >= 15 & hrs < 16 & mins <= 45) {    //3-3.45
-      subject = "nope";
-    }
-    else if (day == 4 & hrs >= 15 & hrs < 16 & mins >= 45) {    //3.45-4
-      subject = "nope";
-    }
-    else if (day == 4 & hrs >= 16 & hrs < 17 & mins <= 45) {   //4-4.45
-      subject = "nope";
-    }
-    //friday
-    if (day == 5 & hrs >= 9 & hrs < 10) {
-      subject = "mat";
-    }
-    else if (day == 5 & hrs >= 10 & hrs < 11) {
-      subject = "daa";
-    }
-    else if (day == 5 & hrs >= 11 & hrs < 12) {
-      subject = "os";
-    }
-    else if (day == 5 & hrs >= 12 & hrs < 13) {
-      subject = "ooc";
-    }
-    else if (day == 5 & hrs >= 13 & hrs < 14 & mins <= 45) {
-      subject = "lunch";
-    }
-    else if (day == 5 & hrs >= 13 & hrs < 14 & mins >= 45) {
-      subject = "nope";
-    }
-    else if (day == 5 & hrs >= 14 & hrs < 15 & mins <= 45) {
-      subject = "nope";
-    }
-    else if (day == 5 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
-      subject = "nope";
-    }
-    else if (day == 5 & hrs >= 15 & hrs < 16 & mins <= 45) {    //3-3.45
-      subject = "nope";
-    }
-    else if (day == 5 & hrs >= 15 & hrs < 16 & mins >= 45) {    //3.45-4
-      subject = "nope";
-    }
-    else if (day == 5 & hrs >= 16 & hrs < 17 & mins <= 45) {   //4-4.45
-      subject = "nope";
-    }
-    //saturday
-    if (day == 6 & hrs >= 9 & hrs < 10) {
-      subject = "lab";
-    }
-    else if (day == 6 & hrs >= 10 & hrs < 11) {
-      subject = "lab";
-    }
+      }
+      //wednesday
+      if (day == 3 & hrs >= 8 & hrs < 10) {
+        subject = "dc";
+      }
+      else if (day == 3 & hrs >= 10 & hrs < 11) {
+        subject = "mes";
+      }
+      else if (day == 3 & hrs >= 11 & hrs < 12) {
+        subject = "daa";
+      }
+      else if (day == 3 & hrs >= 12 & hrs < 13) {
+        subject = "mat";
+      }
+      else if (day == 3 & hrs >= 13 & hrs < 14 & mins <= 45) {
+        subject = "lunch";
+      }
+      else if (day == 3 & hrs >= 13 & hrs < 14 & mins >= 45) {
+        subject = "mat";
+      }
+      else if (day == 3 & hrs >= 14 & hrs < 15 & mins <= 45) {
+        subject = "mat";
+      }
+      else if (day == 3 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
+        subject = "os";
+      }
+      else if (day == 3 & hrs >= 15 & hrs < 16 & mins <= 45) {    //3-3.45
+        subject = "os";
+      }
+      else if (day == 3 & hrs >= 15 & hrs < 16 & mins >= 45) {    //3.45-4
+        subject = "nope";
+      }
+      else if (day == 3 & hrs >= 16 & hrs < 17 & mins <= 45) {   //4-4.45
+        subject = "nope";
+      }
+      //thursday
+      if (day == 4 & hrs >= 8 & hrs < 10) {
+        subject = "ooc";
+      }
+      else if (day == 4 & hrs >= 10 & hrs < 11) {
+        subject = "daa";
+      }
+      else if (day == 4 & hrs >= 11 & hrs < 12) {
+        subject = "lab";
+      }
+      else if (day == 4 & hrs >= 12 & hrs < 13) {
+        subject = "lab";
+      }
+      else if (day == 4 & hrs >= 13 & hrs < 14 & mins <= 45) {
+        subject = "lunch";
+      }
+      else if (day == 4 & hrs >= 13 & hrs < 14 & mins >= 45) {
+        subject = "kan";
+      }
+      else if (day == 4 & hrs >= 14 & hrs < 15 & mins <= 45) {
+        subject = "kan";
+      }
+      else if (day == 4 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
+        subject = "nope";
+      }
+      else if (day == 4 & hrs >= 15 & hrs < 16 & mins <= 45) {    //3-3.45
+        subject = "nope";
+      }
+      else if (day == 4 & hrs >= 15 & hrs < 16 & mins >= 45) {    //3.45-4
+        subject = "nope";
+      }
+      else if (day == 4 & hrs >= 16 & hrs < 17 & mins <= 45) {   //4-4.45
+        subject = "nope";
+      }
+      //friday
+      if (day == 5 & hrs >= 8 & hrs < 10) {
+        subject = "mat";
+      }
+      else if (day == 5 & hrs >= 10 & hrs < 11) {
+        subject = "daa";
+      }
+      else if (day == 5 & hrs >= 11 & hrs < 12) {
+        subject = "os";
+      }
+      else if (day == 5 & hrs >= 12 & hrs < 13) {
+        subject = "ooc";
+      }
+      else if (day == 5 & hrs >= 13 & hrs < 14 & mins <= 45) {
+        subject = "lunch";
+      }
+      else if (day == 5 & hrs >= 13 & hrs < 14 & mins >= 45) {
+        subject = "nope";
+      }
+      else if (day == 5 & hrs >= 14 & hrs < 15 & mins <= 45) {
+        subject = "nope";
+      }
+      else if (day == 5 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
+        subject = "nope";
+      }
+      else if (day == 5 & hrs >= 15 & hrs < 16 & mins <= 45) {    //3-3.45
+        subject = "nope";
+      }
+      else if (day == 5 & hrs >= 15 & hrs < 16 & mins >= 45) {    //3.45-4
+        subject = "nope";
+      }
+      else if (day == 5 & hrs >= 16 & hrs < 17 & mins <= 45) {   //4-4.45
+        subject = "nope";
+      }
+      //saturday
+      if (day == 6 & hrs >= 8 & hrs < 10) {
+        subject = "lab";
+      }
+      else if (day == 6 & hrs >= 10 & hrs < 11) {
+        subject = "lab";
+      }
 
-    //sunday
-    //   else{
-    //     subject="life";
-    //   }
+      //sunday
+      //   else{
+      //     subject="life";
+      //   }
 
-    switch (subject) {
-      case "mat": document.getElementById('classButton').href = "https://meet.google.com/cns-znti-ecy";
-        document.getElementById('statement').innerHTML = "You have Maths class.";
-        document.getElementById('image').src = "images/math.svg";
-        break;
-      case "daa": document.getElementById('classButton').href = "https://meet.google.com/rup-ibsm-hod";
-        document.getElementById('statement').innerHTML = "You have DAA class.";
-        document.getElementById('image').src = "images/algo.svg";
-        break;
-      case "os": document.getElementById('classButton').href = "https://meet.google.com/uzp-bhvh-pse";
-        document.getElementById('statement').innerHTML = "You have OS class.";
-        document.getElementById('image').src = "images/os.svg";
-        break;
-      case "mes": document.getElementById('classButton').href = "https://meet.google.com/kzb-zdtn-fry";
-        document.getElementById('statement').innerHTML = "You have MES class.";
-        document.getElementById('image').src = "images/bot.svg";
-        break;
-      case "ooc": document.getElementById('classButton').href = "http://meet.google.com/ihe-hobs-wco";
-        document.getElementById('statement').innerHTML = "You have OOC class.";
-        document.getElementById('image').src = "images/ooc.svg";
-        break;
-      case "dc": document.getElementById('classButton').href = "https://meet.google.com/xvt-bpmh-khk";
-        document.getElementById('statement').innerHTML = "You have DC class.";
-        document.getElementById('image').src = "images/dc.svg";
-        break;
-      case "lab": document.getElementById('classButton').href = "";
-        document.getElementById('statement').innerHTML = "You have labs.Link not available.";
-        document.getElementById('image').src = "images/labs.svg";
-        break;
-      case "lunch": document.getElementById('classButton').href = "";
-        document.getElementById('statement').innerHTML = "It's grab something to eat time.";
-        document.getElementById('image').src = "images/lunch.svg";
-        break;
+      switch (subject) {
+        case "mat": document.getElementById('classButton').href = "https://meet.google.com/cns-znti-ecy";
+          document.getElementById('statement').innerHTML = "You have Maths class.";
+          document.getElementById('image').src = "images/math.svg";
+          break;
+        case "daa": document.getElementById('classButton').href = "https://meet.google.com/rup-ibsm-hod";
+          document.getElementById('statement').innerHTML = "You have DAA class.";
+          document.getElementById('image').src = "images/algo.svg";
+          break;
+        case "os": document.getElementById('classButton').href = "https://meet.google.com/uzp-bhvh-pse";
+          document.getElementById('statement').innerHTML = "You have OS class.";
+          document.getElementById('image').src = "images/os.svg";
+          break;
+        case "mes": document.getElementById('classButton').href = "https://meet.google.com/kzb-zdtn-fry";
+          document.getElementById('statement').innerHTML = "You have MES class.";
+          document.getElementById('image').src = "images/bot.svg";
+          break;
+        case "ooc": document.getElementById('classButton').href = "http://meet.google.com/ihe-hobs-wco";
+          document.getElementById('statement').innerHTML = "You have OOC class.";
+          document.getElementById('image').src = "images/ooc.svg";
+          break;
+        case "dc": document.getElementById('classButton').href = "https://meet.google.com/xvt-bpmh-khk";
+          document.getElementById('statement').innerHTML = "You have DC class.";
+          document.getElementById('image').src = "images/dc.svg";
+          break;
+        case "lab": document.getElementById('classButton').href = "https://meet.google.com/rup-ibsm-hod";
+          document.getElementById('statement').innerHTML = "You have labs.";
+          document.getElementById('image').src = "images/labs.svg";
+          break;
+        case "lunch": document.getElementById('classButton').href = "";
+          document.getElementById('statement').innerHTML = "It's grab something to eat time.";
+          document.getElementById('image').src = "images/lunch.svg";
+          break;
 
-      default: document.getElementById('statement').innerHTML = "You don't have a class now.";
-        document.getElementById('image').src = "images/chill.svg";
-        console.log(subject);
-    }
+        default: document.getElementById('statement').innerHTML = "You don't have a class now.";
+          document.getElementById('image').src = "images/chill.svg";
+          document.getElementById('classButton').classList.add('hidden');
+          console.log(subject);
+      }
+    }, 500);
+
+
+
+
+
 
 
   }
