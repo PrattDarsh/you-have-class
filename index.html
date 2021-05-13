@@ -153,10 +153,10 @@
         subject = "daa";
       }
       else if (day == 4 & hrs >= 11 & hrs < 12) {
-        subject = "lab";
+        subject = "labx";
       }
       else if (day == 4 & hrs >= 12 & hrs < 13) {
-        subject = "lab";
+        subject = "labx";
       }
       else if (day == 4 & hrs >= 13 & hrs < 14 & mins <= 45) {
         subject = "lunch";
@@ -251,8 +251,12 @@
           document.getElementById('statement').innerHTML = "You have DC class.";
           document.getElementById('image').src = "images/dc.svg";
           break;
-        case "lab": document.getElementById('classButton').href = "https://meet.google.com/rup-ibsm-hod";
+        case "labx": document.getElementById('classButton').href = "https://meet.google.com/rup-ibsm-hod";
           document.getElementById('statement').innerHTML = "You have labs.";
+          document.getElementById('image').src = "images/labs.svg";
+          break;
+        case "lab": document.getElementById('classButton').href = "https://meet.google.com/rup-ibsm-hod";
+          document.getElementById('statement').innerHTML = "You have labs but I don't know your batch.";
           document.getElementById('image').src = "images/labs.svg";
           break;
         case "lunch": document.getElementById('classButton').href = "";
