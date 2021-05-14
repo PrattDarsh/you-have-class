@@ -180,39 +180,39 @@
         subject = "nope";
       }
       //friday
-      if (day == 5 & hrs >= 8 & hrs < 10) {
-        subject = "mat";
-      }
-      else if (day == 5 & hrs >= 10 & hrs < 11) {
-        subject = "daa";
-      }
-      else if (day == 5 & hrs >= 11 & hrs < 12) {
-        subject = "os";
-      }
-      else if (day == 5 & hrs >= 12 & hrs < 13) {
-        subject = "ooc";
-      }
-      else if (day == 5 & hrs >= 13 & hrs < 14 & mins <= 45) {
-        subject = "lunch";
-      }
-      else if (day == 5 & hrs >= 13 & hrs < 14 & mins >= 45) {
-        subject = "nope";
-      }
-      else if (day == 5 & hrs >= 14 & hrs < 15 & mins <= 45) {
-        subject = "nope";
-      }
-      else if (day == 5 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
-        subject = "nope";
-      }
-      else if (day == 5 & hrs >= 15 & hrs < 16 & mins <= 45) {    //3-3.45
-        subject = "nope";
-      }
-      else if (day == 5 & hrs >= 15 & hrs < 16 & mins >= 45) {    //3.45-4
-        subject = "nope";
-      }
-      else if (day == 5 & hrs >= 16 & hrs < 17 & mins <= 45) {   //4-4.45
-        subject = "nope";
-      }
+      // if (day == 5 & hrs >= 8 & hrs < 10) {
+      //   subject = "mat";
+      // }
+      // else if (day == 5 & hrs >= 10 & hrs < 11) {
+      //   subject = "daa";
+      // }
+      // else if (day == 5 & hrs >= 11 & hrs < 12) {
+      //   subject = "os";
+      // }
+      // else if (day == 5 & hrs >= 12 & hrs < 13) {
+      //   subject = "ooc";
+      // }
+      // else if (day == 5 & hrs >= 13 & hrs < 14 & mins <= 45) {
+      //   subject = "lunch";
+      // }
+      // else if (day == 5 & hrs >= 13 & hrs < 14 & mins >= 45) {
+      //   subject = "nope";
+      // }
+      // else if (day == 5 & hrs >= 14 & hrs < 15 & mins <= 45) {
+      //   subject = "nope";
+      // }
+      // else if (day == 5 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
+      //   subject = "nope";
+      // }
+      // else if (day == 5 & hrs >= 15 & hrs < 16 & mins <= 45) {    //3-3.45
+      //   subject = "nope";
+      // }
+      // else if (day == 5 & hrs >= 15 & hrs < 16 & mins >= 45) {    //3.45-4
+      //   subject = "nope";
+      // }
+      // else if (day == 5 & hrs >= 16 & hrs < 17 & mins <= 45) {   //4-4.45
+      //   subject = "nope";
+      // }
       //saturday
       if (day == 6 & hrs >= 8 & hrs < 10) {
         subject = "lab";
@@ -222,8 +222,8 @@
       }
 
       //////////////////////////////////extra class
-      if (day == 4 & hrs >= 14 & hrs < 18) {
-        subject = "extra";
+      if (day == 5 & hrs >= 8 & hrs < 20) {
+        subject = "holiday";
       }
       /////////////////////////////////////////////
       //sunday
@@ -269,8 +269,12 @@
           document.getElementById('image').src = "images/lunch.svg";
           break;
         case "extra": document.getElementById('classButton').href = "https://meet.google.com/ohq-znxx-ztw";
-          document.getElementById('statement').innerHTML = "You have an extra class.DAA lab";
+          document.getElementById('statement').innerHTML = "You have an extra class.";
           document.getElementById('image').src = "images/labs.svg";
+          break;
+        case "holiday": document.getElementById('classButton').href = "https://meet.google.com/yvi-dbnw-kxz";
+          document.getElementById('statement').innerHTML = "Apparantly we have a holiday today. This button is for testing a feature. Don't join.";
+          document.getElementById('image').src = "images/chill.svg";
           break;
 
         default: document.getElementById('statement').innerHTML = "You don't have a class now.";
