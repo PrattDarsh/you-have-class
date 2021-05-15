@@ -183,52 +183,56 @@
       else if (day == 4 & hrs >= 16 & hrs < 17 & mins <= 45) {   //4-4.45
         subject = "nope";
       }
-      //friday
-      // if (day == 5 & hrs >= 8 & hrs < 10) {
-      //   subject = "mat";
-      // }
-      // else if (day == 5 & hrs >= 10 & hrs < 11) {
-      //   subject = "daa";
-      // }
-      // else if (day == 5 & hrs >= 11 & hrs < 12) {
-      //   subject = "os";
-      // }
-      // else if (day == 5 & hrs >= 12 & hrs < 13) {
-      //   subject = "ooc";
-      // }
-      // else if (day == 5 & hrs >= 13 & hrs < 14 & mins <= 45) {
-      //   subject = "lunch";
-      // }
-      // else if (day == 5 & hrs >= 13 & hrs < 14 & mins >= 45) {
-      //   subject = "nope";
-      // }
-      // else if (day == 5 & hrs >= 14 & hrs < 15 & mins <= 45) {
-      //   subject = "nope";
-      // }
-      // else if (day == 5 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
-      //   subject = "nope";
-      // }
-      // else if (day == 5 & hrs >= 15 & hrs < 16 & mins <= 45) {    //3-3.45
-      //   subject = "nope";
-      // }
-      // else if (day == 5 & hrs >= 15 & hrs < 16 & mins >= 45) {    //3.45-4
-      //   subject = "nope";
-      // }
-      // else if (day == 5 & hrs >= 16 & hrs < 17 & mins <= 45) {   //4-4.45
-      //   subject = "nope";
-      // }
+      // friday
+      if (day == 5 & hrs >= 8 & hrs < 10) {
+        subject = "mat";
+      }
+      else if (day == 5 & hrs >= 10 & hrs < 11) {
+        subject = "daa";
+      }
+      else if (day == 5 & hrs >= 11 & hrs < 12) {
+        subject = "os";
+      }
+      else if (day == 5 & hrs >= 12 & hrs < 13) {
+        subject = "ooc";
+      }
+      else if (day == 5 & hrs >= 13 & hrs < 14 & mins <= 45) {
+        subject = "lunch";
+      }
+      else if (day == 5 & hrs >= 13 & hrs < 14 & mins >= 45) {
+        subject = "nope";
+      }
+      else if (day == 5 & hrs >= 14 & hrs < 15 & mins <= 45) {
+        subject = "nope";
+      }
+      else if (day == 5 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
+        subject = "nope";
+      }
+      else if (day == 5 & hrs >= 15 & hrs < 16 & mins <= 45) {    //3-3.45
+        subject = "nope";
+      }
+      else if (day == 5 & hrs >= 15 & hrs < 16 & mins >= 45) {    //3.45-4
+        subject = "nope";
+      }
+      else if (day == 5 & hrs >= 16 & hrs < 17 & mins <= 45) {   //4-4.45
+        subject = "nope";
+      }
       //saturday
-      if (day == 6 & hrs >= 8 & hrs < 10) {
-        subject = "lab";
-      }
-      else if (day == 6 & hrs >= 10 & hrs < 11) {
-        subject = "lab";
-      }
+      // if (day == 6 & hrs >= 8 & hrs < 10) {
+      //   subject = "lab";
+      // }
+      // else if (day == 6 & hrs >= 10 & hrs < 11) {
+      //   subject = "lab";
+      // }
 
       //////////////////////////////////extra class
-      if (day == 5 & hrs >= 8 & hrs < 24) {
-        subject = "holiday";
+      if (day == 6 & hrs >= 9 & hrs < 12) {
+        subject = "extra";
       }
+      else if (day == 6 & hrs >= 12 & hrs < 14) {
+        subject = "web";
+      }
+      // else subject = "none";
       /////////////////////////////////////////////
       //sunday
       //   else{
@@ -272,13 +276,17 @@
           document.getElementById('statement').innerHTML = "It's grab something to eat time.";
           document.getElementById('image').src = "images/lunch.svg";
           break;
-        case "extra": document.getElementById('classButton').href = "https://meet.google.com/ohq-znxx-ztw";
-          document.getElementById('statement').innerHTML = "You have an extra class.";
+        case "extra": document.getElementById('classButton').href = "https://meet.google.com/vhn-wyxw-kxv";
+          document.getElementById('statement').innerHTML = "You have a presentation to attend";
           document.getElementById('image').src = "images/labs.svg";
           break;
         case "holiday": document.getElementById('classButton').href = "https://meet.google.com/yvi-dbnw-kxz";
           document.getElementById('statement').innerHTML = "You have a holiday today. We don't. This button is for testing a feature.";
           document.getElementById('image').src = "images/chill.svg";
+          break;
+        case "web": document.getElementById('classButton').href = "https://meet.google.com/vns-asqw-qvj?hs=224";
+          document.getElementById('statement').innerHTML = "You have a lecture on Web. 100% Recommended.";
+          document.getElementById('image').src = "images/dc.svg";
           break;
 
         default: document.getElementById('statement').innerHTML = "You don't have a class now.";
