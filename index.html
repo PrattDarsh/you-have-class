@@ -17,17 +17,17 @@
   </style>
 </head>
 
-<body onload="getClass()" class="h-screen bg-gray-900 border-2 rounded">
-  <!--
-  <img src="images/logo.svg" class="m-4 h-16">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-    class=" text-white absolute top-2 right-2  md:top-8 md:right-12  h-12 w-12 mx-4 my-4" viewBox="0 0 24 24"
-    stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-  </svg> -->
+<body onload="getClass()" class="h-screen bg-gray-900 border-2 rounded transition delay-50">
 
-  <div class="grid items-center h-full max-w-6xl grid-cols-1 p-4 mx-auto md:grid-cols-2 ">
+
+  <a onclick="showMenu()"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+      class=" text-white absolute top-2 right-2  md:top-8 md:right-12  h-12 w-12 mx-4 my-4" viewBox="0 0 24 24"
+      stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+    </svg></a>
+
+  <div id="main" class="grid items-center h-full max-w-6xl grid-cols-1 p-4 mx-auto md:grid-cols-2 ">
     <div class="space-y-8">
       <p id="statement" class="text-4xl font-bold text-center text-white"></p>
       <a id="classButton" href="" target="_blank"
@@ -40,30 +40,39 @@
       <img id="image" src="" class="px-6">
     </div>
   </div>
-  <!--
 
-  <div class="grid gap-12 items-center h-full max-w-6xl grid-cols-1 p-4 mx-auto md:grid-cols-2 text-white ">
+
+  <div id="TT"
+    class="grid gap-12 items-center h-full max-w-6xl grid-cols-2 p-4 mx-auto md:grid-cols-2 text-white hidden">
     <div class="flex justify-end">
-      <ul>
+      <ul class="text-xl text-right space-y-8">
         <li>Monday</li>
-        <li>Monday</li>
-        <li>Monday</li>
-        <li>Monday</li>
-        <li>Monday</li>
-        <li>Monday</li>
+        <li>Tuesday</li>
+        <li>Wednesday</li>
+        <li>Thursday</li>
+        <li>Friday</li>
+        <li>Saturday</li>
       </ul>
 
     </div>
     <div class="flex justify-start">
       <p>World</p>
     </div>
-  </div> -->
+  </div>
 
 
 
 
 </body>
 <script>
+  function showMenu() {
+    document.getElementById('main').classList.toggle('hidden');
+    document.getElementById('TT').classList.toggle('hidden');
+    document.body.classList.toggle('bg-black');
+    document.body.classList.toggle('bg-gray-900');
+    // document.body.style.backgroundColor = "red";
+    // document.body.removeAttribute('bg-gray-900');
+  }
   function getClass() {
     setInterval(function () {
       var d = new Date();
@@ -251,12 +260,10 @@
       // }
 
       //////////////////////////////////extra class
-      // if (day == 6 & hrs >= 9 & hrs < 12) {
-      //   subject = "extra";
-      // }
-      else if (day == 6 & hrs >= 11 & hrs < 14) {
-        subject = "web";
+      if (day = 6) {
+        subject = "test";
       }
+
       // else subject = "none";
       /////////////////////////////////////////////
       //sunday
@@ -305,8 +312,8 @@
           document.getElementById('statement').innerHTML = "You have a presentation to attend at 10.";
           document.getElementById('image').src = "images/labs.svg";
           break;
-        case "holiday": document.getElementById('classButton').href = "https://meet.google.com/yvi-dbnw-kxz";
-          document.getElementById('statement').innerHTML = "You have a holiday today. We don't. This button is for testing a feature.";
+        case "test": document.getElementById('classButton').href = "https://meet.google.com/yvi-dbnw-kxz";
+          document.getElementById('statement').innerHTML = "This button is for testing a feature.";
           document.getElementById('image').src = "images/chill.svg";
           break;
         case "web": document.getElementById('classButton').href = "https://meet.google.com/vns-asqw-qvj?hs=224";
@@ -317,7 +324,7 @@
         default: document.getElementById('statement').innerHTML = "You don't have a class now.";
           document.getElementById('image').src = "images/chill.svg";
           document.getElementById('classButton').classList.add('hidden');
-          console.log(subject);
+
       }
     }, 500);
 
