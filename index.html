@@ -12,6 +12,7 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
+      -webkit-tap-highlight-color: transparent;
     }
 
   </style>
@@ -45,12 +46,12 @@
   <div id="TT"
     class="grid gap-8 md:gap-12 items-center h-full max-w-6xl grid-cols-2 p-4 mx-auto md:grid-cols-2 text-white hidden">
     <div class="flex justify-end">
-      <ul class="text-xl text-right space-y-8 cursor-pointer pr-6 border-r-2 border-white">
-        <li onclick="monday()"><button id="mon" class="focus:text-indigo-600 focus:outline-none"> Monday</button></li>
-        <li onclick="tuesday()"><button id="tue" class="focus:text-indigo-600 focus:outline-none">Tuesday</button></li>
-        <li onclick=" wednesday()"><button id="wed" class="focus:text-indigo-600 focus:outline-none">Wednesday</button>
+      <ul class="text-xl text-right space-y-8 cursor-pointer pr-6 border-r-2 border-white focus:background-none">
+        <li><button onclick="monday()" id="mon" class="focus:text-indigo-600 focus:outline-none"> Monday</button></li>
+        <li><button onclick="tuesday()" id="tue" class="focus:text-indigo-600 focus:outline-none">Tuesday</button></li>
+        <li><button onclick=" wednesday()" id="wed" class="focus:text-indigo-600 focus:outline-none">Wednesday</button>
         </li>
-        <li onclick="thursday()"><button id="thu" class="focus:text-indigo-600 focus:outline-none">Thursday</button>
+        <li><button onclick="thursday()" id="thu" class="focus:text-indigo-600 focus:outline-none">Thursday</button>
         </li>
         <li onclick=" friday()"><button id="fri" class="focus:text-indigo-600 focus:outline-none">Friday</button></li>
         <li onclick="saturday()"><button id="sat" class="focus:text-indigo-600 focus:outline-none">Saturday</button>
