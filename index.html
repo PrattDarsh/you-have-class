@@ -22,7 +22,7 @@
 
 
   <a onclick="showMenu()"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
-      class=" text-white absolute top-2 right-2  md:top-8 md:right-12 h-8 w-8 md:h-12 md:w-12 mx-4 my-4"
+      class="hover:text-yellow-300 text-white absolute top-2 right-2  md:top-8 md:right-12 h-8 w-8 md:h-12 md:w-12 mx-4 my-4"
       viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
         d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -55,12 +55,13 @@
         </li>
         <li onclick=" friday()"><button id="fri" class="focus:text-indigo-600 focus:outline-none">Friday</button></li>
         <li onclick="saturday()"><button id="sat" class="focus:text-indigo-600 focus:outline-none">Saturday</button>
+        <li onclick="sunday()"><button id="sun" class="focus:text-indigo-600 focus:outline-none">Sunday</button>
         </li>
       </ul>
 
     </div>
     <div class="flex justify-start space-x-4">
-      <ul class="text-xl text-left space-y-8 hidden" id="monday">
+      <ul class="ml-4 text-xl text-left space-y-8 hidden" id="monday">
         <li>DAA</li>
         <li>MES</li>
         <li>DC</li>
@@ -110,6 +111,11 @@
         <li>LAB</li>
 
       </ul>
+      <ul class="text-xl text-left space-y-8 " id="sunday">
+        <li class="text-center">Mass bunk today</li>
+
+
+      </ul>
 
     </div>
   </div>
@@ -119,17 +125,49 @@
 
 </body>
 <script>
+
   function showMenu() {
+    var x = new Date();
+    var newDay = x.getDay()
     document.getElementById('main').classList.toggle('hidden');
     document.getElementById('TT').classList.toggle('hidden');
     document.body.classList.toggle('bg-black');
     document.body.classList.toggle('bg-gray-900');
+    if (newDay == 1) {
+      document.getElementById('mon').click();
+      document.getElementById('mon').classList.add('text-yellow-300');
+    }
+    else if (newDay == 2) {
+      document.getElementById('tue').click();
+      document.getElementById('tue').classList.add('text-yellow-300');
+    }
+    else if (newDay == 3) {
+      document.getElementById('wed').click();
+      document.getElementById('wed').classList.add('text-yellow-300');
+    }
+    else if (newDay == 4) {
+      document.getElementById('thu').click();
+      document.getElementById('thu').classList.add('text-yellow-300');
+    }
+    else if (newDay == 5) {
+      document.getElementById('fri').click();
+      document.getElementById('fri').classList.add('text-yellow-300');
+    }
+    else if (newDay == 6) {
+      document.getElementById('sat').click();
+      document.getElementById('sat').classList.add('text-yellow-300');
+    }
+    else {
+      document.getElementById('sun').click();
+      document.getElementById('sun').classList.add('text-yellow-300');
+    }
+
 
   }
 
   function getClass() {
     setInterval(function () {
-      var buttonDay;
+
       var d = new Date();
       var day = d.getDay()
       var hrs = d.getHours();
@@ -398,6 +436,7 @@
     document.getElementById('thursday').classList.add('hidden');
     document.getElementById('friday').classList.add('hidden');
     document.getElementById('saturday').classList.add('hidden');
+    document.getElementById('sunday').classList.add('hidden');
 
   }
   function tuesday() {
@@ -407,6 +446,7 @@
     document.getElementById('thursday').classList.add('hidden');
     document.getElementById('friday').classList.add('hidden');
     document.getElementById('saturday').classList.add('hidden');
+    document.getElementById('sunday').classList.add('hidden');
 
   }
   function wednesday() {
@@ -416,6 +456,7 @@
     document.getElementById('thursday').classList.add('hidden');
     document.getElementById('friday').classList.add('hidden');
     document.getElementById('saturday').classList.add('hidden');
+    document.getElementById('sunday').classList.add('hidden');
 
   }
   function thursday() {
@@ -425,6 +466,7 @@
     document.getElementById('tuesday').classList.add('hidden');
     document.getElementById('friday').classList.add('hidden');
     document.getElementById('saturday').classList.add('hidden');
+    document.getElementById('sunday').classList.add('hidden');
 
 
   }
@@ -435,6 +477,7 @@
     document.getElementById('thursday').classList.add('hidden');
     document.getElementById('wednesday').classList.add('hidden');
     document.getElementById('saturday').classList.add('hidden');
+    document.getElementById('sunday').classList.add('hidden');
 
   }
   function saturday() {
@@ -444,6 +487,18 @@
     document.getElementById('tuesday').classList.add('hidden');
     document.getElementById('friday').classList.add('hidden');
     document.getElementById('thursday').classList.add('hidden');
+    document.getElementById('sunday').classList.add('hidden');
+
+
+  }
+  function sunday() {
+    document.getElementById('sunday').classList.remove('hidden');
+    document.getElementById('monday').classList.add('hidden');
+    document.getElementById('wednesday').classList.add('hidden');
+    document.getElementById('tuesday').classList.add('hidden');
+    document.getElementById('friday').classList.add('hidden');
+    document.getElementById('thursday').classList.add('hidden');
+    document.getElementById('saturday').classList.add('hidden');
 
 
   }
