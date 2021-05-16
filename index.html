@@ -21,15 +21,15 @@
 
 
   <a onclick="showMenu()"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
-      class=" text-white absolute top-2 right-2  md:top-8 md:right-12  h-12 w-12 mx-4 my-4" viewBox="0 0 24 24"
-      stroke="currentColor">
+      class=" text-white absolute top-2 right-2  md:top-8 md:right-12 h-8 w-8 md:h-12 md:w-12 mx-4 my-4"
+      viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
         d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
     </svg></a>
 
   <div id="main" class="grid items-center h-full max-w-6xl grid-cols-1 p-4 mx-auto md:grid-cols-2 ">
     <div class="space-y-8">
-      <p id="statement" class="text-4xl font-bold text-center text-white"></p>
+      <p id="statement" class="text-3xl md:text-4xl font-bold text-center text-white"></p>
       <a id="classButton" href="" target="_blank"
         class="flex items-center justify-center w-56 px-6 py-4 mx-auto text-white transition duration-100 ease-in-out transform border-2 border-indigo-600 rounded-lg shadow-lg hover:bg-indigo-600 hover:-translate-y-1 hover:scale-110">Join
         Class</a>
@@ -43,20 +43,73 @@
 
 
   <div id="TT"
-    class="grid gap-12 items-center h-full max-w-6xl grid-cols-2 p-4 mx-auto md:grid-cols-2 text-white hidden">
+    class="grid gap-8 md:gap-12 items-center h-full max-w-6xl grid-cols-2 p-4 mx-auto md:grid-cols-2 text-white hidden">
     <div class="flex justify-end">
-      <ul class="text-xl text-right space-y-8">
-        <li>Monday</li>
-        <li>Tuesday</li>
-        <li>Wednesday</li>
-        <li>Thursday</li>
-        <li>Friday</li>
-        <li>Saturday</li>
+      <ul class="text-xl text-right space-y-8 cursor-pointer pr-6 border-r-2 border-white">
+        <li onclick="monday()"><button id="mon" class="focus:text-indigo-600 focus:outline-none"> Monday</button></li>
+        <li onclick="tuesday()"><button id="tue" class="focus:text-indigo-600 focus:outline-none">Tuesday</button></li>
+        <li onclick=" wednesday()"><button id="wed" class="focus:text-indigo-600 focus:outline-none">Wednesday</button>
+        </li>
+        <li onclick="thursday()"><button id="thu" class="focus:text-indigo-600 focus:outline-none">Thursday</button>
+        </li>
+        <li onclick=" friday()"><button id="fri" class="focus:text-indigo-600 focus:outline-none">Friday</button></li>
+        <li onclick="saturday()"><button id="sat" class="focus:text-indigo-600 focus:outline-none">Saturday</button>
+        </li>
       </ul>
 
     </div>
-    <div class="flex justify-start">
-      <p>World</p>
+    <div class="flex justify-start space-x-4">
+      <ul class="text-xl text-left space-y-8 hidden" id="monday">
+        <li>DAA</li>
+        <li>MES</li>
+        <li>DC</li>
+        <li>OS</li>
+        <li class="text-indigo-600">LUNCH</li>
+        <li>OOC</li>
+        <li>DC</li>
+        <li>DAA</li>
+      </ul>
+      <ul class="text-xl text-left space-y-8 hidden" id="tuesday">
+        <li>MAT</li>
+        <li>MES</li>
+        <li>LAB</li>
+        <li>LAB</li>
+        <li class="text-indigo-600">LUNCH</li>
+        <li>KAN</li>
+        <li>LAB</li>
+      </ul>
+      <ul class="text-xl text-left space-y-8 hidden" id="wednesday">
+        <li>DC</li>
+        <li>MES</li>
+        <li>DAA</li>
+        <li>MAT</li>
+        <li class="text-indigo-600">LUNCH</li>
+        <li>MAT</li>
+        <li>OS</li>
+      </ul>
+      <ul class="text-xl text-left space-y-8 hidden" id="thursday">
+        <li>OOC</li>
+        <li>DAA</li>
+        <li>LAB</li>
+        <li>LAB</li>
+        <li class="text-indigo-600">LUNCH</li>
+        <li>KAN</li>
+
+      </ul>
+      <ul class="text-xl text-left space-y-8 hidden" id="friday">
+        <li>MAT</li>
+        <li>DAA</li>
+        <li>OS</li>
+        <li>OOC</li>
+
+
+      </ul>
+      <ul class="text-xl text-left space-y-8 hidden" id="saturday">
+        <li>LAB</li>
+        <li>LAB</li>
+
+      </ul>
+
     </div>
   </div>
 
@@ -70,16 +123,18 @@
     document.getElementById('TT').classList.toggle('hidden');
     document.body.classList.toggle('bg-black');
     document.body.classList.toggle('bg-gray-900');
-    // document.body.style.backgroundColor = "red";
-    // document.body.removeAttribute('bg-gray-900');
+
   }
+
   function getClass() {
     setInterval(function () {
+      var buttonDay;
       var d = new Date();
       var day = d.getDay()
       var hrs = d.getHours();
       var mins = d.getMinutes();
       var subject;
+
       //monday
       if (day == 1 & hrs >= 8 & hrs <= 10) {
         subject = "daa";
@@ -251,18 +306,17 @@
       else if (day == 5 & hrs >= 16 & hrs < 17 & mins <= 45) {   //4-4.45
         subject = "nope";
       }
-      //saturday
-      // if (day == 6 & hrs >= 8 & hrs < 10) {
-      //   subject = "lab";
-      // }
-      // else if (day == 6 & hrs >= 10 & hrs < 11) {
-      //   subject = "lab";
-      // }
+      // saturday
+      if (day == 6 & hrs >= 8 & hrs < 10) {
+        subject = "lab";
+      }
+      else if (day == 6 & hrs >= 10 & hrs < 11) {
+        subject = "lab";
+      }
 
       //////////////////////////////////extra class
-      if (day = 6) {
-        subject = "test";
-      }
+
+
 
       // else subject = "none";
       /////////////////////////////////////////////
@@ -332,6 +386,63 @@
 
 
 
+
+
+  }
+
+  function monday() {
+    document.getElementById('monday').classList.remove('hidden');
+    document.getElementById('tuesday').classList.add('hidden');
+    document.getElementById('wednesday').classList.add('hidden');
+    document.getElementById('thursday').classList.add('hidden');
+    document.getElementById('friday').classList.add('hidden');
+    document.getElementById('saturday').classList.add('hidden');
+
+  }
+  function tuesday() {
+    document.getElementById('tuesday').classList.remove('hidden');
+    document.getElementById('monday').classList.add('hidden');
+    document.getElementById('wednesday').classList.add('hidden');
+    document.getElementById('thursday').classList.add('hidden');
+    document.getElementById('friday').classList.add('hidden');
+    document.getElementById('saturday').classList.add('hidden');
+
+  }
+  function wednesday() {
+    document.getElementById('wednesday').classList.remove('hidden');
+    document.getElementById('tuesday').classList.add('hidden');
+    document.getElementById('monday').classList.add('hidden');
+    document.getElementById('thursday').classList.add('hidden');
+    document.getElementById('friday').classList.add('hidden');
+    document.getElementById('saturday').classList.add('hidden');
+
+  }
+  function thursday() {
+    document.getElementById('thursday').classList.remove('hidden');
+    document.getElementById('monday').classList.add('hidden');
+    document.getElementById('wednesday').classList.add('hidden');
+    document.getElementById('tuesday').classList.add('hidden');
+    document.getElementById('friday').classList.add('hidden');
+    document.getElementById('saturday').classList.add('hidden');
+
+
+  }
+  function friday() {
+    document.getElementById('friday').classList.remove('hidden');
+    document.getElementById('tuesday').classList.add('hidden');
+    document.getElementById('monday').classList.add('hidden');
+    document.getElementById('thursday').classList.add('hidden');
+    document.getElementById('wednesday').classList.add('hidden');
+    document.getElementById('saturday').classList.add('hidden');
+
+  }
+  function saturday() {
+    document.getElementById('saturday').classList.remove('hidden');
+    document.getElementById('monday').classList.add('hidden');
+    document.getElementById('wednesday').classList.add('hidden');
+    document.getElementById('tuesday').classList.add('hidden');
+    document.getElementById('friday').classList.add('hidden');
+    document.getElementById('thursday').classList.add('hidden');
 
 
   }
