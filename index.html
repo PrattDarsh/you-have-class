@@ -128,7 +128,7 @@
 
   function showMenu() {
     var x = new Date();
-    var newDay = x.getDay()
+    var newDay = x.getDay();
     document.getElementById('main').classList.toggle('hidden');
     document.getElementById('TT').classList.toggle('hidden');
     document.body.classList.toggle('bg-black');
@@ -175,11 +175,14 @@
       var subject;
 
       //monday
-      if (day == 1 & hrs >= 8 & hrs <= 10) {
+      if (day == 1 & hrs >= 8 & hrs < 10) {
         subject = "daa";
+        console.log(hrs)
+
       }
       else if (day == 1 & hrs >= 10 & hrs < 11) {
         subject = "mes";
+
       }
       else if (day == 1 & hrs >= 11 & hrs < 12) {
         subject = "dc";
