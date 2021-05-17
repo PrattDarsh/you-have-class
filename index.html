@@ -193,12 +193,12 @@
       else if (day == 1 & hrs >= 13 & hrs < 14 & mins <= 45) {
         subject = "lunch";
       }
-      else if (day == 1 & hrs >= 13 & hrs < 14 & mins >= 45) {
-        subject = "ooc";
-      }
-      else if (day == 1 & hrs >= 14 & hrs < 15 & mins <= 45) {
-        subject = "ooc";
-      }
+      // else if (day == 1 & hrs >= 13 & hrs < 14 & mins >= 45) {
+      //   subject = "ooc";
+      // }
+      // else if (day == 1 & hrs >= 14 & hrs < 15 & mins <= 45) {
+      //   subject = "ooc";
+      // }
       else if (day == 1 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
         subject = "dc";
       }
@@ -357,8 +357,12 @@
       }
 
       //////////////////////////////////extra class
-
-
+      if (day == 1 & hrs >= 15 & hrs < 16 & mins >= 35) {
+        subject = "ooc";
+      }
+      else if (day == 1 & hrs >= 16 & hrs < 17 & mins <= 45) {
+        subject = "ooc";
+      }
 
       // else subject = "none";
       /////////////////////////////////////////////
