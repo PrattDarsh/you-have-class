@@ -296,12 +296,12 @@
       else if (day == 4 & hrs >= 13 & hrs < 14 & mins <= 45) {
         subject = "lunch";
       }
-      else if (day == 4 & hrs >= 13 & hrs < 14 & mins >= 45) {
-        subject = "kan";
-      }
-      else if (day == 4 & hrs >= 14 & hrs < 15 & mins <= 45) {
-        subject = "kan";
-      }
+      // else if (day == 4 & hrs >= 13 & hrs < 14 & mins >= 45) {
+      //   subject = "kan";
+      // }
+      // else if (day == 4 & hrs >= 14 & hrs < 15 & mins <= 45) {
+      //   subject = "kan";
+      // }
       else if (day == 4 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
         subject = "nope";
       }
@@ -357,6 +357,10 @@
       }
 
       //////////////////////////////////extra class
+
+      if (day == 4 & hrs >= 13 & hrs < 15) {
+        subject = "mesLab";
+      }
 
 
       // else subject = "none";
@@ -414,6 +418,10 @@
         case "web": document.getElementById('classButton').href = "https://meet.google.com/vns-asqw-qvj?hs=224";
           document.getElementById('statement').innerHTML = "You have a lecture on Web at 12. 100% Recommended.";
           document.getElementById('image').src = "images/dc.svg";
+          break;
+        case "mesLab": document.getElementById('classButton').href = "https://meet.google.com/kzb-zdtn-fry";
+          document.getElementById('statement').innerHTML = "You have mes lab";
+          document.getElementById('image').src = "images/bot.svg";
           break;
 
         default: document.getElementById('statement').innerHTML = "You don't have a class now.";
