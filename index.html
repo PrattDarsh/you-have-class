@@ -358,9 +358,9 @@
 
       //////////////////////////////////extra class
 
-      if (day == 4 & hrs >= 13 & hrs < 15) {
-        subject = "mesLab";
-      }
+      // if (day == 4 & hrs >= 13 & hrs < 15) {
+      //   subject = "mesLab";
+      // }
 
 
       // else subject = "none";
@@ -406,6 +406,7 @@
         case "lunch": document.getElementById('classButton').href = "";
           document.getElementById('statement').innerHTML = "It's grab something to eat time.";
           document.getElementById('image').src = "images/lunch.svg";
+          document.getElementById('classButton').classList.add('hidden');
           break;
         case "extra": document.getElementById('classButton').href = "https://meet.google.com/vhn-wyxw-kxv";
           document.getElementById('statement').innerHTML = "You have a presentation to attend at 10.";
