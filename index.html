@@ -359,17 +359,17 @@
       //////////////////////////////////extra class
 
       // else if (day == 1 & hrs >= 13 & hrs < 14 & mins >= 35) {
-      //   subject = "daa";
+      //   subject = "free";
       // }
       // else if (day == 1 & hrs >= 14 & hrs < 15 & mins <= 45) {
-      //   subject = "daa";
+      //   subject = "free";
       // }
 
       // else if (day == 1 & hrs >= 15 & hrs < 16 & mins >= 45) {    //3.45-4
-      //  subject = "ooc";
+      //  subject = "free";
       // }
       // else if (day == 1 & hrs >= 16 & hrs < 17 & mins <= 45) {    //4-4.45
-      //  subject = "ooc";
+      //  subject = "free";
       // }
 
 
@@ -381,12 +381,8 @@
       //   }
 
       switch (subject) {
-        case "free": document.getElementById('statement').innerHTML = "Enjoy your vacation! 5th sem starts on Oct 1st.";
-          document.getElementById('image').src = "images/chill.svg";
-          document.getElementById('classButton').classList.add('hidden');
-          document.getElementById('classButton').classList.add('hidden');
        
-        default: document.getElementById('statement').innerHTML = "You don't have a class now.";
+        default: document.getElementById('statement').innerHTML = "Enjoy your vacation! 5th sem starts on Oct 1st.";
           document.getElementById('image').src = "images/chill.svg";
           document.getElementById('classButton').classList.add('hidden');
 
