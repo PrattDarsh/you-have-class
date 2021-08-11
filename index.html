@@ -381,9 +381,9 @@
       //   }
 
       switch (subject) {
-        case "free": document.getElementById('classButton').href = "";
-          document.getElementById('statement').innerHTML = "Enjoy your vacation! Next sem starts on Oct 1st.";
+        case "free": document.getElementById('statement').innerHTML = "Enjoy your vacation! 5th sem starts on Oct 1st.";
           document.getElementById('image').src = "images/chill.svg";
+          document.getElementById('classButton').classList.add('hidden');
           document.getElementById('classButton').classList.add('hidden');
         case "mat": document.getElementById('classButton').href = "https://meet.google.com/cns-znti-ecy";
           document.getElementById('statement').innerHTML = "You have Maths class.";
