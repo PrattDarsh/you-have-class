@@ -13,42 +13,74 @@
     body {
       font-family: 'Poppins', sans-serif;
       -webkit-tap-highlight-color: transparent;
+      background-color: #00EDF9;
     }
 
   </style>
 </head>
 
-<body onload="getClass()" class="h-screen transition bg-gray-900 border-2 rounded delay-50">
+<body onload="getClass()" class="h-screen overflow-y-hidden transition rounded delay-50">
+  <marquee behavior="scroll" direction="right" class="absolute top-12 "><svg xmlns="http://www.w3.org/2000/svg"
+      class="hidden h-12 text-white fill-current" id="star1" viewBox="0 0 24 24">
+      <path
+        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z" />
+    </svg></marquee>
+  <marquee behavior="scroll" direction="right" class="absolute bottom-12 "><svg xmlns="http://www.w3.org/2000/svg"
+      class="hidden h-12 mt-32 text-white fill-current mr-96" id="star2" viewBox="0 0 24 24">
+      <path
+        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z" />
+    </svg></marquee>
+
+  <svg xmlns="http://www.w3.org/2000/svg" id="moon"
+    class="absolute hidden h-32 text-white fill-current animate-pulse top-12 left-32" viewBox="0 0 24 24">
+    <path
+      d="M12 10.999c1.437.438 2.562 1.564 2.999 3.001.44-1.437 1.565-2.562 3.001-3-1.436-.439-2.561-1.563-3.001-3-.437 1.436-1.562 2.561-2.999 2.999zm8.001.001c.958.293 1.707 1.042 2 2.001.291-.959 1.042-1.709 1.999-2.001-.957-.292-1.707-1.042-2-2-.293.958-1.042 1.708-1.999 2zm-1-9c-.437 1.437-1.563 2.562-2.998 3.001 1.438.44 2.561 1.564 3.001 3.002.437-1.438 1.563-2.563 2.996-3.002-1.433-.437-2.559-1.564-2.999-3.001zm-7.001 22c-6.617 0-12-5.383-12-12s5.383-12 12-12c1.894 0 3.63.497 5.37 1.179-2.948.504-9.37 3.266-9.37 10.821 0 7.454 5.917 10.208 9.37 10.821-1.5.846-3.476 1.179-5.37 1.179z" />
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg"
+    class="absolute h-32 text-yellow-400 fill-current animate-pulse top-12 left-32" id="Sun" viewBox="0 0 24 24">
+    <path
+      d="M4.069 13h-4.069v-2h4.069c-.041.328-.069.661-.069 1s.028.672.069 1zm3.034-7.312l-2.881-2.881-1.414 1.414 2.881 2.881c.411-.529.885-1.003 1.414-1.414zm11.209 1.414l2.881-2.881-1.414-1.414-2.881 2.881c.528.411 1.002.886 1.414 1.414zm-6.312-3.102c.339 0 .672.028 1 .069v-4.069h-2v4.069c.328-.041.661-.069 1-.069zm0 16c-.339 0-.672-.028-1-.069v4.069h2v-4.069c-.328.041-.661.069-1 .069zm7.931-9c.041.328.069.661.069 1s-.028.672-.069 1h4.069v-2h-4.069zm-3.033 7.312l2.88 2.88 1.415-1.414-2.88-2.88c-.412.528-.886 1.002-1.415 1.414zm-11.21-1.415l-2.88 2.88 1.414 1.414 2.88-2.88c-.528-.411-1.003-.885-1.414-1.414zm6.312-10.897c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6z" />
+  </svg>
+  <img src="images/mountain.svg" class="absolute bottom-0 max-w-lg md:left-1/2" id="mountain" alt="">
+  <marquee behavior="scroll" direction="left" class="absolute top-12 " id="cloud1"><svg
+      xmlns="http: //www.w3.org/2000/svg" class="h-32 text-white fill-current" viewBox="0 0 24 24">
+      <path
+        d="M12 3c-4.006 0-7.267 3.141-7.479 7.092-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h13c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408-.212-3.951-3.473-7.092-7.479-7.092z" />
+    </svg></marquee>
+  <marquee behavior="scroll" direction="left" class="absolute top-32 " id="cloud2"><svg
+      xmlns="http: //www.w3.org/2000/svg" class="h-32 text-white fill-current ml-96" viewBox="0 0 24 24">
+      <path
+        d="M12 3c-4.006 0-7.267 3.141-7.479 7.092-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h13c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408-.212-3.951-3.473-7.092-7.479-7.092z" />
+    </svg></marquee>
 
 
-<!--   <a onclick="showMenu()"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
-      class="absolute w-8 h-8 mx-4 my-4 text-white hover:text-yellow-300 top-2 right-2 md:top-8 md:right-12 md:h-12 md:w-12"
+  <a onclick="showMenu()"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+      class="absolute w-8 h-8 mx-4 my-4 text-blue-900 hover:text-white top-2 right-2 md:top-8 md:right-12 md:h-12 md:w-12"
       viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
         d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-    </svg></a> -->
+    </svg></a>
 
-  <div id="main" class="grid items-center h-full max-w-6xl grid-cols-1 p-4 mx-auto md:grid-cols-2 ">
+  <div id="main" class="flex items-center justify-center h-full max-w-6xl p-4 mx-auto">
     <div class="space-y-8">
-      <p id="statement" class="text-3xl font-bold text-center text-white md:text-4xl"></p>
-      <a id="classButton" href="" target="_blank"
-        class="flex items-center justify-center w-56 px-6 py-4 mx-auto text-white transition duration-100 ease-in-out transform border-2 border-indigo-600 rounded-lg shadow-lg hover:bg-indigo-600 hover:-translate-y-1 hover:scale-110">Join
-        Class</a>
+      <p id="statement" class="text-3xl font-bold text-center text-blue-900 md:text-4xl"></p>
+
     </div>
 
     <div class="">
 
-      <img id="image" src="" class="px-6">
+      <img id="image" src="images/bird.svg" class="h-64 px-6 md:h-56 animate-bounce">
     </div>
   </div>
 
 
-<!--    <div id="TT"
+  <div id="TT"
     class="grid items-center hidden h-full max-w-6xl grid-cols-2 gap-8 p-4 mx-auto text-white md:gap-12 md:grid-cols-2">
     <div class="flex justify-end">
       <ul class="pr-6 space-y-8 text-xl text-right border-r-2 border-white cursor-pointer focus:background-none">
         <li><button onclick="monday()" id="mon" class="focus:text-indigo-600 focus:outline-none"> Monday</button></li>
-        <li><button onclick="tuesday()" id="tue" class="focus:text-indigo-600 focus:outline-none">Tuesday</button></li>
+        <li><button onclick="tuesday()" id="tue" class="focus:text-indigo-600 focus:outline-none">Tuesday</button>
+        </li>
         <li><button onclick=" wednesday()" id="wed" class="focus:text-indigo-600 focus:outline-none">Wednesday</button>
         </li>
         <li><button onclick="thursday()" id="thu" class="focus:text-indigo-600 focus:outline-none">Thursday</button>
@@ -62,53 +94,57 @@
     </div>
     <div class="flex justify-start space-x-4">
       <ul class="hidden ml-4 space-y-8 text-xl text-left" id="monday">
-        <li>DAA</li>
-        <li>MES</li>
-        <li>DC</li>
-        <li>OS</li>
+        <li>ADP</li>
+        <li>DBMS</li>
+        <li>ATC</li>
+        <li>CN</li>
         <li class="text-indigo-600">LUNCH</li>
-        <li>OOC</li>
-        <li>DC</li>
-        <li>DAA</li>
+        <li>LAB (B1 and B2)</li>
+
       </ul>
       <ul class="hidden space-y-8 text-xl text-left" id="tuesday">
-        <li>MAT</li>
-        <li>MES</li>
-        <li>LAB</li>
-        <li>LAB</li>
+        <li>DBMS</li>
+        <li>UNIX</li>
+        <li>CN</li>
+        <li>ME</li>
         <li class="text-indigo-600">LUNCH</li>
-        <li>KAN</li>
-        <li>LAB</li>
+        <li>DBMS</li>
+        <li>ATC</li>
       </ul>
       <ul class="hidden space-y-8 text-xl text-left" id="wednesday">
-        <li>DC</li>
-        <li>MES</li>
-        <li>DAA</li>
-        <li>MAT</li>
+        <li>DBMS</li>
+        <li>ATC</li>
+        <li>UNIX</li>
+        <li>CN</li>
         <li class="text-indigo-600">LUNCH</li>
-        <li>MAT</li>
-        <li>OS</li>
+        <li>UNIX</li>
+        <li>ME</li>
       </ul>
       <ul class="hidden space-y-8 text-xl text-left" id="thursday">
-        <li>OOC</li>
-        <li>DAA</li>
-        <li>LAB</li>
-        <li>LAB</li>
+        <li>CN</li>
+        <li>ADP</li>
+        <li>DBMS</li>
+        <li>ME</li>
         <li class="text-indigo-600">LUNCH</li>
-        <li>KAN</li>
+        <li>CN</li>
 
       </ul>
       <ul class="hidden space-y-8 text-xl text-left" id="friday">
-        <li>MAT</li>
-        <li>DAA</li>
-        <li>OS</li>
-        <li>OOC</li>
-
+        <li>LAB</li>
+        <li>LAB</li>
+        <li>LAB</li>
+        <li>ME</li>
+        <li class="text-indigo-600">LUNCH</li>
+        <li>EVS</li>
 
       </ul>
       <ul class="hidden space-y-8 text-xl text-left" id="saturday">
-        <li>LAB</li>
-        <li>LAB</li>
+        <li>LAB (B2 and B3)</li>
+        <li>LAB(B2 and B3)</li>
+        <li>LAB(B2 and B3)</li>
+        <li>ADP</li>
+        <li>VAP</li>
+
 
       </ul>
       <ul class="space-y-8 text-xl text-left " id="sunday">
@@ -119,12 +155,12 @@
 
     </div>
   </div>
- -->
+
 
 
 </body>
 <script>
-/*
+
   function showMenu() {
     var x = new Date();
     var newDay = x.getDay();
@@ -161,9 +197,15 @@
       document.getElementById('sun').classList.add('text-yellow-300');
     }
 
-
+    document.getElementById('Sun').classList.toggle('hidden')
+    document.getElementById('cloud1').classList.toggle('hidden')
+    document.getElementById('cloud2').classList.toggle('hidden')
+    document.getElementById('mountain').classList.toggle('hidden')
+    document.getElementById('moon').classList.toggle('hidden')
+    document.getElementById('star1').classList.toggle('hidden')
+    document.getElementById('star2').classList.toggle('hidden')
   }
-*/
+
   function getClass() {
     setInterval(function () {
 
@@ -175,185 +217,110 @@
 
       //monday
       if (day == 1 & hrs >= 8 & hrs < 10) {
-        subject = "free";
+        subject = "ADP";
         console.log(hrs)
 
       }
       else if (day == 1 & hrs >= 10 & hrs < 11) {
-        subject = "free";
+        subject = "DBMS";
 
       }
       else if (day == 1 & hrs >= 11 & hrs < 12) {
-        subject = "free";
+        subject = "ATC";
       }
       else if (day == 1 & hrs >= 12 & hrs < 13) {
-        subject = "free";
+        subject = "CN";
       }
-      else if (day == 1 & hrs >= 13 & hrs < 14 & mins <= 45) {
-        subject = "free";
+      else if (day == 1 & hrs >= 13 & hrs < 16 & mins <= 45) {
+        subject = "CN(B1) and DBMS(B2)";
       }
-      else if (day == 1 & hrs >= 13 & hrs < 14 & mins >= 45) {
-         subject = "free";
-       }
-      else if (day == 1 & hrs >= 14 & hrs < 15 & mins <= 45) {
-         subject = "free";
-       }
-      else if (day == 1 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
-         subject = "free";
-       }
-      else if (day == 1 & hrs >= 15 & hrs < 16 & mins <= 45) {   //3-3.45
-         subject = "free";
-      }
-      else if (day == 1 & hrs >= 15 & hrs < 16 & mins >= 45) {    //3.45-4
-        subject = "free";
-      }
-      else if (day == 1 & hrs >= 16 & hrs < 17 & mins <= 45) {    //4-4.45
-        subject = "free";
-      }
+
       //tuesday
       if (day == 2 & hrs >= 8 & hrs < 10) {
-        subject = "free";
+        subject = "DBMS";
       }
       else if (day == 2 & hrs >= 10 & hrs < 11) {
-        subject = "free";
+        subject = "UNIX";
       }
       else if (day == 2 & hrs >= 11 & hrs < 12) {
-        subject = "free";
+        subject = "CN";
       }
       else if (day == 2 & hrs >= 12 & hrs < 13) {
-        subject = "free";
+        subject = "ME";
       }
       else if (day == 2 & hrs >= 13 & hrs < 14 & mins <= 45) {
-        subject = "free";
+        subject = "DBMS";
       }
       else if (day == 2 & hrs >= 13 & hrs < 14 & mins >= 45) {
-        subject = "free";
+        subject = "ATC";
       }
-      else if (day == 2 & hrs >= 14 & hrs < 15 & mins <= 45) {
-        subject = "free";
-      }
-      else if (day == 2 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
-        subject = "free";
-      }
-      else if (day == 2 & hrs >= 15 & hrs < 16 & mins <= 45) {    //3-3.45
-        subject = "free";
-      }
-      else if (day == 2 & hrs >= 15 & hrs < 16 & mins >= 45) {    //3.45-4
-        subject = "free";
-      }
-      else if (day == 2 & hrs >= 16 & hrs < 17 & mins <= 45) {   //4-4.45
-        subject = "free";
 
-      }
       //wednesday
       if (day == 3 & hrs >= 8 & hrs < 10) {
-        subject = "free";
+        subject = "DBMS";
       }
       else if (day == 3 & hrs >= 10 & hrs < 11) {
-        subject = "free";
+        subject = "ATC";
       }
       else if (day == 3 & hrs >= 11 & hrs < 12) {
-        subject = "free";
+        subject = "UNIX";
       }
       else if (day == 3 & hrs >= 12 & hrs < 13) {
-        subject = "free";
+        subject = "CN";
       }
       else if (day == 3 & hrs >= 13 & hrs < 14 & mins <= 45) {
-        subject = "free";
+        subject = "UNIX";
       }
       else if (day == 3 & hrs >= 13 & hrs < 14 & mins >= 45) {
-        subject = "free";
+        subject = "ME";
       }
-      else if (day == 3 & hrs >= 14 & hrs < 15 & mins <= 45) {
-        subject = "free";
-      }
-      else if (day == 3 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
-        subject = "free";
-      }
-      else if (day == 3 & hrs >= 15 & hrs < 16 & mins <= 45) {    //3-3.45
-        subject = "free";
-      }
-      else if (day == 3 & hrs >= 15 & hrs < 16 & mins >= 45) {    //3.45-4
-        subject = "free";
-      }
-      else if (day == 3 & hrs >= 16 & hrs < 17 & mins <= 45) {   //4-4.45
-        subject = "free";
-      }
+
       //thursday
       if (day == 4 & hrs >= 8 & hrs < 10) {
-        subject = "free";
+        subject = "CN";
       }
       else if (day == 4 & hrs >= 10 & hrs < 11) {
-        subject = "free";
+        subject = "ADP";
       }
       else if (day == 4 & hrs >= 11 & hrs < 12) {
-        subject = "free";
+        subject = "DBMS";
       }
       else if (day == 4 & hrs >= 12 & hrs < 13) {
-        subject = "free";
+        subject = "ME";
       }
       else if (day == 4 & hrs >= 13 & hrs < 14 & mins <= 45) {
-        subject = "free";
+        subject = "CN";
       }
-      else if (day == 4 & hrs >= 13 & hrs < 14 & mins >= 45) {
-        subject = "free";
-      }
-      else if (day == 4 & hrs >= 14 & hrs < 15 & mins <= 45) {
-        subject = "free";
-      }
-      else if (day == 4 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
-        subject = "free";
-      }
-      else if (day == 4 & hrs >= 15 & hrs < 16 & mins <= 45) {    //3-3.45
-        subject = "free";
-      }
-      else if (day == 4 & hrs >= 15 & hrs < 16 & mins >= 45) {    //3.45-4
-        subject = "free";
-      }
-      else if (day == 4 & hrs >= 16 & hrs < 17 & mins <= 45) {   //4-4.45
-        subject = "free";
-      }
+
       // friday
-      if (day == 5 & hrs >= 8 & hrs < 10) {
-        subject = "free";
-      }
-      else if (day == 5 & hrs >= 10 & hrs < 11) {
-        subject = "free";
-      }
-      else if (day == 5 & hrs >= 11 & hrs < 12) {
-        subject = "free";
+      if (day == 5 & hrs >= 8 & hrs < 12) {
+        subject = "CN(B3) and DBMS(B1)";
       }
       else if (day == 5 & hrs >= 12 & hrs < 13) {
-        subject = "free";
+        subject = "ME";
       }
       else if (day == 5 & hrs >= 13 & hrs < 14 & mins <= 45) {
-        subject = "free";
+        subject = "EVS";
       }
-      else if (day == 5 & hrs >= 13 & hrs < 14 & mins >= 45) {
-        subject = "free";
-      }
-      else if (day == 5 & hrs >= 14 & hrs < 15 & mins <= 45) {
-        subject = "free";
-      }
-      else if (day == 5 & hrs >= 14 & hrs < 15 & mins >= 45) {   //2.45-3
-        subject = "free";
-      }
-      else if (day == 5 & hrs >= 15 & hrs < 16 & mins <= 45) {    //3-3.45
-        subject = "free";
-      }
-      else if (day == 5 & hrs >= 15 & hrs < 16 & mins >= 45) {    //3.45-4
-        subject = "free";
-      }
-      else if (day == 5 & hrs >= 16 & hrs < 17 & mins <= 45) {   //4-4.45
-        subject = "free";
-      }
+
       // saturday
-      if (day == 6 & hrs >= 8 & hrs < 10) {
-        subject = "free";
+      if (day == 6 & hrs >= 8 & hrs < 12) {
+        subject = "CN(B2) and DBMS(B3)";
       }
-      else if (day == 6 & hrs >= 10 & hrs < 11) {
-        subject = "free";
+      else if (day == 6 & hrs >= 12 & hrs < 13) {
+        subject = "ADP";
       }
+      else if (day == 6 & hrs >= 13 & hrs < 14 & mins <= 45) {
+        subject = "VAP";
+      }
+      else if (day == 0) {
+        subject = "a sunday. Please go sleep."
+      }
+      else subject = 'lunch break.'
+
+      // else if (day == 7 & hrs >= 8) {
+      //   subject = "CN(B2) and DBMS(B3)";
+      // }
 
       //////////////////////////////////extra class
 
@@ -379,13 +346,7 @@
       //     subject="life";
       //   }
 
-      switch (subject) {
-       
-        default: document.getElementById('statement').innerHTML = "You don't need this anymore ;) Offline classes starts from Oct 1st.";
-          document.getElementById('image').src = "images/chill.svg";
-          document.getElementById('classButton').classList.add('hidden');
-
-      }
+      document.getElementById('statement').innerHTML = "You have " + subject
     }, 500);
 
 
